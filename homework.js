@@ -88,15 +88,16 @@ countUpAndDown(3);
 // wordsWithA(['cat', 'rabbit', 'dog', 'frog']) // should return ['cat', 'rabbit']
 
 const wordsWithA = function(array){
-    for (var i=0; i<=array.length; i++){
-    if (array[i].indexOf('a') > -1)
-    {
-  console.log(array[i]);
-    }
-  }
+  for (var i=0; i<=array.length; i++){
+  if (array[i].indexOf('a') > -1)
+  {
+     console.log(array[i]);
+  } else { break; }
+}
 }
 
 wordsWithA(['cat', 'rabbit', 'dog', 'frog']);
+
 
 
 8.
@@ -108,11 +109,11 @@ const wordsWithLetter = function(letter, array){
         if (array[i].indexOf(letter) > -1)
         {
       console.log(array[i]);
-        }
+        } 
       }
     }
 
-
+    wordsWithLetter("g", ['cat', 'rabbit', 'dog', 'frog'])
 
 9.
 
@@ -137,6 +138,14 @@ function longestWord(string){
 
 // Function that returns the largest even number 
 // largestEvenNumber([1,2,3,10,4,7,0]) // should return "10"
-const largestEvenNumber = function(array){
-
-}
+function LargestEvenNumber(arr){
+    var max = arr[0];
+    for(var i=1; i<arr.length; i++){
+      if(arr[i] > max && arr[i] % 2 == 0){
+        max = arr[i];   
+      }
+     }
+   return max;
+   }
+   
+   LargestEvenNumber([1,2,3,10,4,7,0]);
